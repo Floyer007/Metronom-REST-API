@@ -55,7 +55,7 @@ class AlertParser @Autowired constructor(
 
         private val LOG = LoggerFactory.getLogger(AlertParser::class.java)
 
-        const val METRONOM_ALERT_URL = "https://www.der-metronom.de/livedata/etc?type=troublelist&_=1538252265246"
+        const val METRONOM_ALERT_URL = "https://www.der-metronom.de/livedata/etc?type=troublelist&product=metronom&_=1538252265246"
 
     }
 

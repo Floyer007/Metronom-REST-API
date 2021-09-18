@@ -56,7 +56,7 @@ class StationDelayParser @Autowired constructor(
 
     companion object {
 
-        private const val BASE_URL = "https://www.der-metronom.de/livedata/etc?type=stationsauskunft"
+        private const val BASE_URL = "https://www.der-metronom.de/livedata/etc?type=stationsauskunft&product=metronom"
 
     }
 
