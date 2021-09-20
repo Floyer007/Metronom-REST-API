@@ -34,8 +34,7 @@ class AlertParser @Autowired constructor(
     }
 
     private fun parseAlertsFromSource(pageSource: String): List<Alert> {
-        val mainJsonNode = objectMapper.readTree(pageSource)
-        val alertJsonNode = mainJsonNode.get("stoerung")
+        val alertJsonNode = objectMapper.readTree(pageSource)
 
         val alerts = ArrayList<Alert>()
         alertJsonNode.forEach { jsonAlert ->

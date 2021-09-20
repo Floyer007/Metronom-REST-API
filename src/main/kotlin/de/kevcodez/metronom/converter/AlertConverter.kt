@@ -18,9 +18,15 @@ class AlertConverter {
 
     fun convert(alert: JsonNode): Alert {
         val text = alert.get("text").textValue()
-        val date = alert.get("datum").textValue()
-        val timeFrom = alert.get("time_von").textValue()
-        val timeTo = alert.get("time_von").textValue()
+
+        val getDate = alert.get("datum").textValue()
+        val dateArray = getDate!!.split("\\.".toRegex())
+        val date = "${dateArray[2]}-${dateArray[1]}-${dateArray[0]}"
+
+        val getTimeFrom = alert.get("time_von").textValue()
+        val timeFrom = "${getTimeFrom}:00.000"
+        val getTimeTo = alert.get("time_bis").textValue()
+        val timeTo = "${getTimeTo}:00.000"
 
         val bhfVon = alert.get("bhfvon").textValue()
         val startStation =

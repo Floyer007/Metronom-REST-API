@@ -21,13 +21,17 @@ class AlertConverterTest {
     @Test
     fun shouldConvertAlert() {
         val json = """{
-                "netz": "Hamburg-Uelzen",
-                "bhfvon": "Stelle",
-                "bhfnach": "Maschen",
-                "text": "81638 Lüneburg → Hamburg Hbf hat in Maschen (planmäßig 22:00) +14 min. Grund: Einwirkung Dritter / Eingriff in den Bahnverkehr.",
-                "datum": "2018-09-29+02:00",
-                "time_von": "22:00:48.000+01:00",
-                "time_bis": "00:20:42.000+01:00"
+                "netz": "RE4",
+                "netz_orig": "Hamburg-Uelzen",
+                "linie": "RE4",
+                "bhfvon": "Hamburg-Harburg",
+                "bhfnach": "Hamburg Hbf",
+                "bhfvonid": "AHAR",
+                "bhfnachid": "AH",
+                "text": "82038 Bremen Hbf → Hamburg Hbf hat in Hamburg Hbf (planmäßig 21:43) +15 min.  Grund: Personen im Gleis.",
+                "datum": "18.09.2021",
+                "time_von": "21:43",
+                "time_bis": "23:43"
                 }"""
 
         val alert = alertConverter!!.convert(objectMapper.readTree(json))
@@ -35,9 +39,11 @@ class AlertConverterTest {
 
         assertThat<String>(
             alert.message,
-            `is`("81638 Lüneburg → Hamburg Hbf hat in Maschen (planmäßig 22:00) +14 min. Grund: Einwirkung Dritter / Eingriff in den Bahnverkehr.")
+            `is`("82038 Bremen Hbf → Hamburg Hbf hat in Hamburg Hbf (planmäßig 21:43) +15 min.  Grund: Personen im Gleis.")
         )
-        assertThat(alert.creationDate.toString(), `is`("2018-09-29"))
+        assertThat(alert.creationDate.toString(), `is`("2021-09-18"))
+        assertThat(alert.timeFrom.toString(), `is`("21:43"))
+        assertThat(alert.timeTo.toString(), `is`("23:43"))
     }
 
     @Test
