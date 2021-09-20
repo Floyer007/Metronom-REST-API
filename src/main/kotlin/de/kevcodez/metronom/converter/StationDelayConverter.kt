@@ -27,7 +27,9 @@ class StationDelayConverter {
             return null
         }
 
-        val timeAsString = node.get("stand").asText()
+        val getTimeAsString = node.get("standsek").asText()
+        val timeAsStringArray = getTimeAsString!!.split("\\:".toRegex())
+        val timeAsString = "${timeAsStringArray[0]}:${timeAsStringArray[1]}"
         val time = LocalTime.parse(timeAsString)
 
         val stationDelay = StationDelay(station, time)

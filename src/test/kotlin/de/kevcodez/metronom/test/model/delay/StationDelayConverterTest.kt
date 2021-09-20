@@ -16,7 +16,7 @@ class StationDelayConverterTest {
     @Test
     fun shouldConvertJsonDepartures() {
         val json =
-            "{'name':'Cuxhaven','stand':'22:44','abfahrt':[{'zeit':'23:15','zug':'81942','ziel':'Hamburg','prognose':'p\u00fcnktlich','prognosemin':'0'},{'zeit':'00:15','zug':'81944','ziel':'Rotenburg','prognose':'p\u00fcnktlich','prognosemin':'5'}]}"
+            "{'name':'Cuxhaven','stand':'10:10 PM','standsek':'22:10:04','abfahrt':[{'zeit':'23:15','zug':'81942','ziel':'Hamburg','prognose':'pünktlich','prognosemin':'0'},{'zeit':'00:15','zug':'81944','ziel':'Rotenburg','prognose':'pünktlich','prognosemin':'5'}]}"
                 .replace("'".toRegex(), "\"")
 
         val station = StationProvider.findStationByName("Cuxhaven")
@@ -41,7 +41,7 @@ class StationDelayConverterTest {
     @Test
     fun shouldParseTrack() {
         val json =
-            "{'name':'Cuxhaven','stand':'22:10','abfahrt':[{'zeit':'22:33','zug':'82835','ziel':'Hamburg','prognose':'p\u00fcnktlich, heute Gleis 8','prognosemin':'0','gleiswechsel':'8B'}]}"
+            "{'name':'Cuxhaven','stand':'10:10 PM','standsek':'22:10:04','abfahrt':[{'zeit':'22:33','zug':'82835','ziel':'Hamburg','prognose':'pünktlich, heute Gleis 8','prognosemin':'0','gleiswechsel':'8B'}]}"
                 .replace("'".toRegex(), "\"")
 
         val station = StationProvider.findStationByName("Cuxhaven")
