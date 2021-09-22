@@ -21,7 +21,10 @@ java -jar ./build/libs/metronom-0.0.1-SNAPSHOT.jar
 
 Voraussetzungen:
 
+* Java 8+ ist installiert
 * Docker ist installiert
+
+(Bisher ausschließlich unter Linux getestet!)
 
 ```
 git clone https://github.com/kevcodez/Metronom-REST-API.git
