@@ -30,7 +30,7 @@ Voraussetzungen:
 git clone https://github.com/kevcodez/Metronom-REST-API.git
 cd Metronom-REST-API
 docker build -t metronom-rest-api .
-
+docker run -p 8080:8080 metronom-rest-api:latest
 ```
 
 
