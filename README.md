@@ -16,7 +16,20 @@ cd Metronom-REST-API
 # Für Windows gradlew.bat nutzen
 ./gradlew build
 java -jar ./build/libs/metronom-0.0.1-SNAPSHOT.jar
-``` 
+```
+# Start mit Docker
+
+Voraussetzungen:
+
+* Docker ist installiert
+
+```
+git clone https://github.com/kevcodez/Metronom-REST-API.git
+cd Metronom-REST-API
+docker build -t metronom-rest-api .
+
+```
+
 
 # REST-API
 
