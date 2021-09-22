@@ -11,7 +11,7 @@ Voraussetzungen:
 * Java 8+ ist installiert
 
 ```
-git clone https://github.com/kevcodez/Metronom-REST-API.git
+git clone https://github.com/Floyer007/Metronom-REST-API.git
 cd Metronom-REST-API
 # Für Windows gradlew.bat nutzen
 ./gradlew build
@@ -27,7 +27,7 @@ Voraussetzungen:
 (Bisher ausschließlich unter Linux getestet!)
 
 ```
-git clone https://github.com/kevcodez/Metronom-REST-API.git
+git clone https://github.com/Floyer007/Metronom-REST-API.git
 cd Metronom-REST-API
 docker build -t metronom-rest-api .
 docker run -p 8080:8080 metronom-rest-api:latest
